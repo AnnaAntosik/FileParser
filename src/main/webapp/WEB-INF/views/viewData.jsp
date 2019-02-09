@@ -6,7 +6,6 @@
 </head>
 <body>
 <table>
-
     <c:forEach items="${data}" var="row">
         <tr>
             <c:forEach items="${row}" var="cell">
