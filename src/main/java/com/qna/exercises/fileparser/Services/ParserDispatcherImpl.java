@@ -7,12 +7,12 @@ import java.io.InputStream;
 import java.util.List;
 
 @Service
-public class ParserDispacherImpl implements ParserDispacher {
+public class ParserDispatcherImpl implements ParserDispatcher {
 
     private List<ParserService> parserServices;
 
     @Autowired
-    public ParserDispacherImpl(List<ParserService> parserServices) {
+    public ParserDispatcherImpl(List<ParserService> parserServices) {
         this.parserServices = parserServices;
     }
 
@@ -24,7 +24,6 @@ public class ParserDispacherImpl implements ParserDispacher {
                 return parserService.parseInput(inputStream);
             }
         }
-
         throw new Exception("Unknown file format");
     }
 }
