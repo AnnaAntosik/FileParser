@@ -48,7 +48,6 @@ public class ParserPrn implements ParserService {
             }
             fileList.add(rowArr);
         }
-
         return fileList;
     }
 }

@@ -20,5 +20,4 @@ public class ParserCSV implements ParserService {
         List<String[]> allRows = csvReader.readAll();
         return allRows;
     }
-
 }

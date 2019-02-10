@@ -13,7 +13,6 @@ public class FileParserApplication extends SpringBootServletInitializer {
         return application.sources(FileParserApplication.class);
     }
 
-
     public static void main(String[] args) throws Exception {
         SpringApplication.run(FileParserApplication.class, args);
     }
