@@ -2,9 +2,7 @@ package com.qna.exercises.fileparser.Services;
 
 import com.qna.exercises.fileparser.Configuration.PrnProperties;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -39,11 +37,11 @@ public class ParserPrn implements ParserService {
         int[] divisionArr = properties.getSplitter();
         List<String[]> fileList = new ArrayList<>();
 
-        for (int rowIdx = 0; rowIdx < allLines.size(); rowIdx++) {
+        for (String allLine : allLines) {
             String[] rowArr = new String[divisionArr.length];
             int startingShift = 0;
-            for (int cellIdx = 0; cellIdx < rowArr.length; cellIdx++) {
-                rowArr[cellIdx] = allLines.get(rowIdx).substring(divisionArr[cellIdx] + startingShift, divisionArr[cellIdx + 1]);
+            for (int cellIdx = 0; cellIdx < rowArr.length - 1; cellIdx++) {
+                rowArr[cellIdx] = allLine.substring(divisionArr[cellIdx] + startingShift, divisionArr[cellIdx + 1]);
                 startingShift = 1;
             }
             fileList.add(rowArr);
